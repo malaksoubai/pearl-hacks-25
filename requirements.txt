@@ -1,0 +1,7 @@
+#ML processing dependencies
+scikit-learn
+pandas
+
+#Computer Vision dependencies
+opencv-python
+numpy
