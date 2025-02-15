@@ -55,12 +55,12 @@ def calculate_scores():
     topics_similarity = 0
 
     for mentor in mentors:
-        industry_similarity = industry_score(user.get("industry"), mentor.get("industry"))*weights.get("industry")
+        industry_similarity = industry_score(user.get("industry"), mentor.industry)*weights.get("industry")
         experience_similarity = 0*weights.get("experience")
-        skills_similarity = skills_score(user.get("skills"), mentor.get("skills"))*weights.get("skills")
-        # topics_similarity = interestedtopics_score(user.get("topics"), mentor.get("topics"))*weights.get("skills")
+        skills_similarity = skills_score(user.get("skills"), mentor.skills)*weights.get("skills")
+        # topics_similarity = interestedtopics_score(user.get("topics"), mentor.topics)*weights.get("skills")
         score = industry_similarity + experience_similarity + skills_similarity
-        match_scores_w_names[mentor.get("name")] = score
+        match_scores_w_names[mentor.name] = score
 
         features_pylist.append([industry_similarity, experience_similarity, skills_similarity])
         match_scores.append(score)
@@ -76,5 +76,4 @@ calculate_scores()
 print(features_pylist)
 print(match_scores)
 print(final_match_labels)
-print(match_scores_w_names)
-
+# print(match_scores_w_names)

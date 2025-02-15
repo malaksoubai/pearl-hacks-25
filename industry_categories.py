@@ -1,5 +1,6 @@
 industry_categories = {
     "Technology": ["AI Development", "Software Development", "Cybersecurity"],
-    "industry 2": [],
-    "industry 3": []
+    "Research and Development": ["Biotechnology"],
+    "Engineering": ["Electrical Engineering", "Computer Engineering"],
+    "Medicine": ["Medical Doctor", "Nursing"]
 }
