@@ -20,6 +20,7 @@ class Mentor:
         self.name = name
         self.industry = industry
         self.skills = []
+        self.email = self.name.lower() + "@gmail.com"
 
         skills_num = 7
         for index in range(0, skills_num):
