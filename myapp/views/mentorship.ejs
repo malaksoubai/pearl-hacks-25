@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentorship | SheDevs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <nav class="navbar">
+        <div class="logo">
+          <a href="#">SHEDEVS</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/mentorship">Mentorship</a></li>
+          <li><a href="/mock-interview">Mock Interviews</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <header>
+      <h1>Mentorship</h1>
+    </header>
+
+    <section class="content">
+        <p>In this mentoriship, you will have the opportunity to be matched with the best mentors for you!
+           Fill out your information then Press <strong><em>Find Match!</em></strong> to begin:
+        </p>  
+        
+
+        <div class="button-container">
+            <button class="cta-button" id="save-user-log">Save user log</button>
+            <button class="cta-button" id="find-match">Find Match!</button>
+        </div>
+
+        <div id="question-display" class="question-box">
+            <!-- <p><strong>Question:</strong> <span id="question-text">Click "Generate Question" to start.</span></p> -->
+        </div>
+
+        
+        <div id="output-container">
+          <p id="output-text"></p> <!-- Output will appear here -->
+        </div>
+
+        <div id="output-container">
+          <p id="recordmsg-text1"></p>
+          <p id="recordmsg-text"></p> <!-- Output will appear here -->
+        </div>
+
+        <div id="output-container">
+          <p id="evaluation"></p>
+          <p id="evaluation2"></p> <!-- Output will appear here -->
+        </div>
+    </section>
+
+    <!-- <footer>
+      <p>Made with love & pink 💕 | SheDevs</p>
+    </footer> -->
+  </div>
+
+  <!-- <script src="/scripts/mock-interview.js"></script> -->
+  <script>
+    document.getElementById("generate-question").addEventListener("click", function() {
+      // Fetch the output from the Python script
+      fetch("/run-question")
+        .then(response => response.json()) // Parse JSON from the response
+        .then(data => {
+          // Display the Python output in the output-text element
+          document.getElementById("output-text").innerText = "Generated Question: " + data.pythonOutput;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          document.getElementById("output-text").innerText = "Error: " + error;
+        });
+    });
+
+      document.getElementById("record").addEventListener("click", function() {
+        document.getElementById("recordmsg-text1").innerText = "Recording...";
+        // Fetch the output from the Python script
+        fetch("/run-recording")
+          .then(response => response.json()) // Parse JSON from the response
+          .then(data => {
+            // Display the Python output in the output-text element
+            document.getElementById("recordmsg-text").innerText = data.pythonOutput;
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            document.getElementById("recordmsg-text").innerText = "Error: " + error;
+          });
+      });
+
+      document.getElementById("generate-evaluation").addEventListener("click", function() {
+        document.getElementById("evaluation").innerText = "Evaluating...";
+        // Fetch the output from the Python script
+        fetch("/run-evaluation")
+          .then(response => response.json()) // Parse JSON from the response
+          .then(data => {
+            // Display the Python output in the output-text element
+            document.getElementById("evaluation2").innerText = data.pythonOutput;
+          })
+          .catch(error => {
+          console.error('Error:', error);
+          document.getElementById("evaluation2").innerText = "Error: " + error;
+        });
+      });
+    </script>
+</body>
+</html>

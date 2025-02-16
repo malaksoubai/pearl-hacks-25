@@ -12,30 +12,31 @@
 
 
 const express = require('express');
-const cors = require('cors'); // Add this import
+const cors = require('cors'); // This one is important
 const { exec } = require('child_process');
 const path = require('path');
 
 const app = express();
 
-// Enable CORS for all routes
 app.use(cors());
 
-// Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Set EJS as the view engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 // Route to render the HTML page
 app.get('/', (req, res) => {
-  res.render('index'); // Render the 'index.ejs' file
+  res.render('index');
 });
 
 
 app.get('/mock-interview', (req, res) => {
-    res.render('mock-interview'); // Automatically loads views/mock-interview.ejs
+    res.render('mock-interview'); // to load views/mock-interview.ejs
+});
+
+app.get('/mentorship', (req, res) => {
+  res.render('mentorship');
 });
 
 //RUN PYTHON SCRIPT - SHOW QUESTION!!
