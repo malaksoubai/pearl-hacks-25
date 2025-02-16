@@ -4,43 +4,130 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Find Mentor Match</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> <!-- Poppins font -->
+  <link rel="stylesheet" href="styles.css"> <!-- Assuming the CSS is saved as 'styles.css' -->
+  <style>
+    /* Additional inline styles to match your colors if the external CSS isn't working */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #F4C6D0;  /* Soft peach background */
+    }
+
+    h1 {
+      color: #5A2A4D;  /* Dusty rose for header text */
+      font-size: 3em;
+      margin: 0;
+      font-weight: bold;
+    }
+
+    h2 {
+      color: #5A2A4D;  /* Dusty rose for h2 */
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 1.2em;
+      color: #F0808A;  /* Rich pink for labels */
+    }
+
+    select {
+      font-size: 1.2em;
+      padding: 10px;
+      border-radius: 8px;
+      border: 2px solid #F0808A;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    .cta-button {
+      background-color: #F0808A; /* Rich pink */
+      color: white;
+      padding: 15px 35px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.5em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .cta-button:hover {
+      background-color: #F3B8C0; /* Muted pink on hover */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .content {
+      background: #F4C6D0;  /* Soft peach background */
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 1.2em;
+      color: #F0808A;  /* Rich pink */
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
-  <h2>Find Your Mentor Match</h2>
-  <form action="/find-matches" method="POST">
-    <label for="industry_of_interest">Select Industry:</label>
-    <select name="industry_of_interest" multiple>
-      <option value="AI Development">AI Development</option>
-      <option value="Software Development">Software Development</option>
-      <option value="Cybersecurity">Cybersecurity</option>
-      <option value="Biomedical Engineering">Biomedical Engineering</option>
-      <option value="Biotechnology">Biotechnology</option>
-      <option value="Electrical Engineering">Electrical Engineering</option>
-      <option value="Computer Engineering">Computer Engineering</option>
-      <option value="Medical Doctor">Medical Doctor</option>
-      <option value="Nursing">Nursing</option>
-    </select>
-    <br>
+  <header>
+    <h1>Find Your Mentor Match</h1>
+  </header>
 
-    <label for="skills_of_interest">Select Skills:</label>
-    <select name="skills_of_interest" multiple>
-      <option value="Java">Java</option>
-      <option value="CSS">CSS</option>
-      <option value="C">C</option>
-      <option value="Python">Python</option>
-      <option value="R">R</option>
-      <option value="DevOps">DevOps</option>
-      <option value="Machine Learning">Machine Learning</option>
-      <option value="AI">AI</option>
-      <option value="Data Science">Data Science</option>
-      <option value="Network Security">Network Security</option>
-      <option value="Web Development">Web Development</option>
-      <option value="Front-end Development">Front-end Development</option>
-      <option value="Back-end Development">Back-end Development</option>
-    </select>
-    <br>
+  <div class="content">
+    <h2>Your Mentor Match Finder</h2>
+    <form action="/find-matches" method="POST">
+      <div class="form-group">
+        <label for="industry_of_interest">Select Industry:</label>
+        <select name="industry_of_interest" multiple>
+          <option value="AI Development">AI Development</option>
+          <option value="Software Development">Software Development</option>
+          <option value="Cybersecurity">Cybersecurity</option>
+          <option value="Biomedical Engineering">Biomedical Engineering</option>
+          <option value="Biotechnology">Biotechnology</option>
+          <option value="Electrical Engineering">Electrical Engineering</option>
+          <option value="Computer Engineering">Computer Engineering</option>
+          <option value="Medical Doctor">Medical Doctor</option>
+          <option value="Nursing">Nursing</option>
+        </select>
+      </div>
 
-    <button type="submit">Find Match</button>
-  </form>
+      <div class="form-group">
+        <label for="skills_of_interest">Select Skills:</label>
+        <select name="skills_of_interest" multiple>
+          <option value="Java">Java</option>
+          <option value="CSS">CSS</option>
+          <option value="C">C</option>
+          <option value="Python">Python</option>
+          <option value="R">R</option>
+          <option value="DevOps">DevOps</option>
+          <option value="Machine Learning">Machine Learning</option>
+          <option value="AI">AI</option>
+          <option value="Data Science">Data Science</option>
+          <option value="Network Security">Network Security</option>
+          <option value="Web Development">Web Development</option>
+          <option value="Front-end Development">Front-end Development</option>
+          <option value="Back-end Development">Back-end Development</option>
+        </select>
+      </div>
+
+      <div class="button-container">
+        <button type="submit" class="cta-button">Find Match</button>
+      </div>
+    </form>
+  </div>
+
+  <footer>
+    <p>Powered by SheDevs</p>
+  </footer>
 </body>
 </html>
