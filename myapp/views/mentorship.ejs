@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Mentor Match</title>
+</head>
+<body>
+  <h2>Find Your Mentor Match</h2>
+  <form action="/find-matches" method="POST">
+    <label for="industry_of_interest">Select Industry:</label>
+    <select name="industry_of_interest" multiple>
+      <option value="AI Development">AI Development</option>
+      <option value="Software Development">Software Development</option>
+      <option value="Cybersecurity">Cybersecurity</option>
+      <option value="Biomedical Engineering">Biomedical Engineering</option>
+      <option value="Biotechnology">Biotechnology</option>
+      <option value="Electrical Engineering">Electrical Engineering</option>
+      <option value="Computer Engineering">Computer Engineering</option>
+      <option value="Medical Doctor">Medical Doctor</option>
+      <option value="Nursing">Nursing</option>
+    </select>
+    <br>
+
+    <label for="skills_of_interest">Select Skills:</label>
+    <select name="skills_of_interest" multiple>
+      <option value="Java">Java</option>
+      <option value="CSS">CSS</option>
+      <option value="C">C</option>
+      <option value="Python">Python</option>
+      <option value="R">R</option>
+      <option value="DevOps">DevOps</option>
+      <option value="Machine Learning">Machine Learning</option>
+      <option value="AI">AI</option>
+      <option value="Data Science">Data Science</option>
+      <option value="Network Security">Network Security</option>
+      <option value="Web Development">Web Development</option>
+      <option value="Front-end Development">Front-end Development</option>
+      <option value="Back-end Development">Back-end Development</option>
+    </select>
+    <br>
+
+    <button type="submit">Find Match</button>
+  </form>
+</body>
+</html>
