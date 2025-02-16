@@ -1,6 +1,6 @@
 """Data to Match"""
 
-names = ["Jamie", "Trisha", "Gina", "Sai Ananya", "Malak", "Nivedhita", "Allana", "Juno", 
+names = ["Jamie", "Trisha", "Gina", "Sai Ananya", "Malak", "Nivedita", "Allana", "Juno", 
 "Gayathri", "Maxine", "Mary", "Nicki"]
 
 all_industries = sorted(["AI Development", "Software Development", "Cybersecurity",
