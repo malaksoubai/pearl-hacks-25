@@ -1,4 +1,4 @@
 /node_modules
-/voicetest
+/voicetest/.env
 ./chatRequest.py
 /myapp/node_modules
