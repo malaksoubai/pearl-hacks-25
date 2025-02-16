@@ -1,13 +1,24 @@
 import cv2
 import time
 import pyautogui
+import shutil
+import os
 #workshop
 # Initialize the face detector with the YuNet model
+
+
 detector = cv2.FaceDetectorYN.create("model.onnx", "", (300, 300))
 
 # Set up video capture from camera (index 1) (or index 0, you may have to try both)
 cv2.namedWindow("cam")
 capture = cv2.VideoCapture(0)
+
+screenshots_folder = "screenshots"
+
+if(os.path.exists(screenshots_folder)):
+    #Clear old screenshots from folder
+    shutil.rmtree(screenshots_folder)
+
 
 # Check if the camera is accessible
 if capture.isOpened():
@@ -69,10 +80,11 @@ while rval:
                 cv2.putText(frame, "LOOK AT ME", (50, 50), cv2.FONT_HERSHEY_COMPLEX, 0.7, (0, 255, 0), 2)
             
             current_time = time.time()
-            if saved_time is None or current_time - saved_time >= 30:
-                pic_name = f"screenshot_{int(current_time)}.png"
+            if saved_time is None or current_time - saved_time >= 20:
+                #Save to screenshots folder
+                pic_name = os.path.join(screenshots_folder, f"screenshot_{int(current_time)}.png")
                 screenshot = pyautogui.screenshot()
-                cv2.imwrite(pic_name, frame)
+                snapshot = cv2.imwrite(pic_name, frame)
                 print("Screenshot saved!")
                 saved_time = current_time
 
