@@ -5,6 +5,9 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
 
+with open(file=f"mentorinfo.txt", mode="w") as new_letter:
+    new_letter.write("Your top 5 mentor matches are:" + "\n")
+
 # This function checks if user's preferred industries matches the mentor's industry
 def get_industry(mentor_industry) -> float:
     user_interests: list[str] = user["industry_of_interest"] 
@@ -36,12 +39,26 @@ for mentor in mentors:
     skills_similarity = cosine_similarity([user_skills_of_interest], [mentor_skills])[0][0]
     industry_similarity = get_industry(mentor.industry)
     averaged_similarity = (skills_similarity + industry_similarity) / 2
-    similarity_scores.append((mentor.name, averaged_similarity))
+    similarity_scores.append((mentor, averaged_similarity))
 
 top_matches = sorted(similarity_scores, key=lambda x: x[1], reverse=True)[:5]
 
-print("Top 5 compatible users:")
-for name, score in top_matches:
+print("Your top 5 mentor matches are:")
+for mentor, score in top_matches:
     percent = score*100
-    print(f"{name}: {int(round(percent, 0))}%")
+    print(f"{mentor.name}: {int(round(percent, 0))}%")
+    print("   industry: " + mentor.industry)
+    print("   skills: " + ", ".join(mentor.skills))
+    print("   contacts: " + mentor.email)
+    new_txt_text = "   industry: " + mentor.industry + "\n" + "   skills: " + ", ".join(mentor.skills) + "\n" + "   contacts: " + mentor.email + "\n"
+    with open(file=f"mentorinfo.txt", mode="a") as new_letter:
+        new_letter.write(f"{mentor.name}: {int(round(percent, 0))}%" + "\n")
+        new_letter.write(new_txt_text)
+    
+
+
+
+
+
+# Our qstretch goal: pronouns / optional Ai generated email
 

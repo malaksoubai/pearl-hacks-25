@@ -1,0 +1,21 @@
+Your top 5 mentor matches are:
+Allana: 84%
+   industry: AI Development
+   skills: Python, Data Science, Web Development, Front-end Development, AI, Web Development, Front-end Development, AI, Machine Learning
+   contacts: allana@gmail.com
+Gayathri: 78%
+   industry: Cybersecurity
+   skills: AI, Java, DevOps, R, Machine Learning, Back-end Development, C
+   contacts: gayathri@gmail.com
+Maxine: 75%
+   industry: AI Development
+   skills: Python, Java, AI, Java, Python, Web Development, Front-end Development, Python
+   contacts: maxine@gmail.com
+Trisha: 61%
+   industry: AI Development
+   skills: C, Web Development, Front-end Development, CSS, C, DevOps, AI, C
+   contacts: trisha@gmail.com
+Gayathri: 60%
+   industry: Cybersecurity
+   skills: Web Development, Front-end Development, Python, CSS, DevOps, C, Web Development, Front-end Development, Back-end Development
+   contacts: gayathri@gmail.com
