@@ -1,0 +1,175 @@
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;  /* Set Poppins as the default font for all text */
+  margin: 0;
+  padding: 0;
+  background: #F8D7E1;  /* Light pink background */
+  color: #F0808A;  /* Rich pink text */
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #F4C6D0; /* Soft peach/pale pink background */
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo a {
+  font-size: 28px;
+  color: #5A2A4D;  /* Muted pink for logo */
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif; /* Ensure Poppins is used for the logo */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a {
+  color: #F0808A;  /* Rich pink for nav links */
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s;
+  font-family: 'Poppins', sans-serif; /* Apply Poppins font to nav links */
+}
+
+.nav-links a:hover {
+  color: #F3B8C0;  /* Muted pink on hover */
+}
+
+/* About link (matching navbar link style) */
+.nav-link {
+  color: #F0808A;  /* Rich pink for About link */
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 500;
+  transition: color 0.3s;
+  font-family: 'Poppins', sans-serif; /* Use Poppins font */
+}
+
+.nav-link:hover {
+  color: #F3B8C0;  /* Muted pink on hover */
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #F4C6D0; /* Soft peach/pale pink background */
+    padding: 20px;
+    border-radius: 8px;
+    display: none; /* Hidden by default */
+  }
+
+  .navbar.active .nav-links {
+    display: flex; /* Show when the navbar is active */
+  }
+
+  .navbar .logo a {
+    font-size: 22px;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+  }
+}
+
+/* For small screens */
+@media (max-width: 600px) {
+  .navbar .logo a {
+    font-size: 20px;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+  }
+}
+
+/* Header Styles */
+header {
+  background: #F3B8C0;  /* Muted pink */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+header h1 {
+  color: #5A2A4D;  /* Dusty rose for text */
+  font-size: 3em;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Content Styles */
+.content {
+  background: #F4C6D0;  /* Soft peach background */
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+.content p {
+  font-size: 1.4em;
+  font-weight: 500;
+  color: #F0808A; /* Rich pink text */
+}
+
+/* Button Styles */
+.cta-button {
+  background-color: #F0808A; /* Rich pink */
+  color: white;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+  background-color: #F3B8C0; /* Muted pink on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styles */
+footer {
+  margin-top: 40px;
+  font-size: 1.2em;
+  color: #F0808A;  /* Rich pink */
+}
+
+footer p {
+  margin: 0;
+  font-style: italic;
+}
+
+/* Center buttons inside their container */
+.button-container {
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;  /* Center vertically */
+    gap: 20px;  /* Add space between buttons */
+    margin-top: 30px;
+    flex-wrap: wrap; /* Ensure responsiveness */
+    text-align: center;
+  }
+  
